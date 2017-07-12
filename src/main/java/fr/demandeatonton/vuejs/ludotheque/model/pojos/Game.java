@@ -35,6 +35,13 @@ public class Game implements Serializable {
    public Game() {
    }
 
+   public Game(Long id, String name, Genre genre) {
+      super();
+      this.id = id;
+      this.name = name;
+      this.genre = genre;
+   }
+
    public Game(String name, Genre genre) {
       this.name = name;
       this.genre = genre;
