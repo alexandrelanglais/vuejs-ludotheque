@@ -27,6 +27,11 @@ public class Platform implements Serializable {
    public Platform() {
    }
 
+   public Platform(String name, String constructor) {
+      this.name = name;
+      this.constructor = constructor;
+   }
+
    public Platform(String name, String constructor, Set<Game> games) {
       this.name = name;
       this.constructor = constructor;

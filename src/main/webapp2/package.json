@@ -1,0 +1,18 @@
+{
+  "name": "vuejs-ludotheque",
+  "version": "1.0.0",
+  "description": "A video games management system coded in Vue.js, Axios and Spring Boot",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "bootstrap": "^3.3.7",
+    "vue": "^2.3.4",
+    "vue-bulma": "0.0.35"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexandre Langlais",
+  "license": "ISC"
+}

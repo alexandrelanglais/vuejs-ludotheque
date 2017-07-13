@@ -5,7 +5,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import fr.demandeatonton.vuejs.ludotheque.exceptions.InvalidGenreCreationException;
 import fr.demandeatonton.vuejs.ludotheque.exceptions.InvalidGenreException;
 import fr.demandeatonton.vuejs.ludotheque.model.GamesRepository;
 import fr.demandeatonton.vuejs.ludotheque.model.GenreRepository;
@@ -40,15 +39,6 @@ public class GameServiceImpl implements GameService {
       Game game = new Game(gameName, genre);
 
       return gamesRepository.save(game);
-   }
-
-   @Override
-   public Genre createGenre(String genreName) {
-      Optional<Genre> genre = genresRepository.findByName(genreName);
-      if (genre.isPresent())
-         throw new InvalidGenreCreationException("Genre already exists: " + genreName);
-      Genre save = genresRepository.save(new Genre(genreName));
-      return save;
    }
 
    @Override
