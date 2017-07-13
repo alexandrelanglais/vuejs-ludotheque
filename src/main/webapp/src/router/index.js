@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/pages/Home'
 import About from '@/pages/About'
 import GamesByGenre from '@/pages/GamesByGenre'
+import GamesByPlatform from '@/pages/GamesByPlatform'
 import AddGenre from '@/pages/AddGenre'
 import AddPlatform from '@/pages/AddPlatform'
 import AddGame from '@/pages/AddGame'
@@ -22,11 +23,6 @@ export default new Router({
       component: About
     },
     {
-      path: '/games/bygenre/:id',
-      name: 'GamesByGenre',
-      component: GamesByGenre
-    },
-    {
       path: '/addGenre',
       name: 'AddGenre',
       component: AddGenre
@@ -40,6 +36,16 @@ export default new Router({
       path: '/addGame',
       name: 'AddGame',
       component: AddGame
+    },
+    {
+      path: '/games/bygenre',
+      name: 'GamesByGenre',
+      component: GamesByGenre
+    },
+    {
+      path: '/games/byplatform',
+      name: 'GamesByPlatform',
+      component: GamesByPlatform
     }
   ]
 })

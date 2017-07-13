@@ -1,6 +1,6 @@
 package fr.demandeatonton.vuejs.ludotheque.model;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import java.util.Optional;
 
@@ -30,5 +30,13 @@ public class TestGamesRepository {
       entityManager.persist(new Game("GTA", genre));
       Optional<Game> game = gamesRepository.findByName("GTA");
       assertEquals("GTA", game.get().getName());
+   }
+
+   @Test
+   public void testFindByGenre() {
+      Genre genre = entityManager.persist(new Genre("Action"));
+      entityManager.persist(new Game("GTA", genre));
+      Iterable<Game> games = gamesRepository.findByGenre(genre);
+      assertTrue(games.iterator().hasNext());
    }
 }

@@ -96,4 +96,20 @@ public class GameControllerTest extends TestBeans {
             .contentType(MediaType.APPLICATION_JSON))
             .andExpect(jsonPath("$[0].name", is("FFXV")));
    }
+
+   @Test
+   public void canIListGamesFromAGenre() throws Exception {
+      Set<Game> tested = new HashSet<>();
+      Game game = new Game();
+      game.setName("FFXV");
+      game.setGenre(new Genre("RPG"));
+      tested.add(game);
+
+      given(gameServiceMock.listGamesByGenre(1L)).willReturn(tested);
+
+      mockMvc.perform(get("/games/listByGenre")
+            .contentType(MediaType.APPLICATION_JSON)
+            .param("genreId", "1"))
+            .andExpect(jsonPath("$[0].name", is("FFXV")));
+   }
 }

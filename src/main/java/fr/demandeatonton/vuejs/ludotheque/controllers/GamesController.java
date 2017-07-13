@@ -36,4 +36,9 @@ public class GamesController {
       return gameService.listGames();
    }
 
+   @RequestMapping(value = "/listByGenre", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
+   public @ResponseBody Iterable<Game> listGamesByGenre(@RequestParam(required = true) Long genreId) {
+      return gameService.listGamesByGenre(genreId);
+   }
+
 }

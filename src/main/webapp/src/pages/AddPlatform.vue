@@ -6,7 +6,8 @@
   <main-layout>
     <p>Add a platform</p>
     <div>
-      <input type="text" v-model="platformName"/>
+      Nom: <input type="text" v-model="platformName"/>
+      Constructeur: <input type="text" v-model="platformConstructor"/>
       <input type="button" v-on:click="postForm" value="Ajouter"/>
       <span v-model="response"></span>
       <ul v-if="errors && errors.length">
@@ -28,6 +29,7 @@ export default {
   },
   data: () => ({
     platformName: '',
+    platformConstructor: '',
     response: '',
     errors: []
   }),
@@ -35,7 +37,8 @@ export default {
     // Pushes posts to the server when called.
     postForm () {
       axios.post('http://localhost:8080/platforms/add', {
-        name: this.platformName
+        name: this.platformName,
+        constructor: this.platformConstructor
       })
       .then(response => {
         this.response = response.data

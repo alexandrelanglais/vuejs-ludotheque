@@ -52,4 +52,13 @@ public class GameServiceImpl implements GameService {
       return gamesRepository.findAll();
    }
 
+   @Override
+   public Iterable<Game> listGamesByGenre(Long genreId) {
+      Genre findOne = genresRepository.findOne(genreId);
+      if (findOne == null) {
+         throw new InvalidGenreException("Genre not found:" + genreId);
+      }
+      return gamesRepository.findByGenre(findOne);
+   }
+
 }

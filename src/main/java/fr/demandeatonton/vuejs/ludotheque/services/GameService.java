@@ -13,4 +13,6 @@ public interface GameService {
    Game findByName(String gameName);
 
    Iterable<Game> listGames();
+
+   Iterable<Game> listGamesByGenre(Long genreId);
 }
