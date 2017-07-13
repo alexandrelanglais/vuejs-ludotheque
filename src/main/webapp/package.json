@@ -4,6 +4,7 @@
   "description": "A video games management system coded in Vue.js, Axios and Spring Boot",
   "main": "index.js",
   "dependencies": {
+    "bootstrap-vue": "^0.18.0",
     "vue": "^2.3.4"
   },
   "devDependencies": {},
